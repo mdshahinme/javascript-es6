@@ -1,1 +1,1 @@
-# javascript-es6
+# WIT Home Work About JavaScript ES-6
