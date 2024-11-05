@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6</title>
+</head>
+
+<body>
+    <h2>JavaScript ES6 Home Work</h2>
+
+    <script>
+        function abc() {
+
+            var variable1 = "First Var Value";
+            let variable2 = "First let value";
+            const variable3 = "First Constant value";
+
+            console.log("All First Value:");
+            console.log("Var variable:", variable1);
+            console.log("Let variable:", variable2);
+            console.log("Const Variable:", variable3);
+
+            // reassign each variable
+            variable1 = "New Var Value";
+            variable2 = "New let value";
+            try {
+                variable3 = "New const value";
+            } catch (error) {
+                console.log("Error reassigning constVariable:", error.message);
+            }
+
+            console.log("\n New Assign Values attempt:");
+            console.log("New var Value:", variable1);
+            console.log("New let Value:", variable2);
+            console.log("New Const Value:", variable3);
+        }
+
+        abc();
+        // == This it the issue for reassign const value. Attempting to reassign a const variable results in a TypeError, as shown in the output
+        // All First Value:
+        // Var variable: First Var Value
+        // Let variable: First let value
+        // Const Variable: First Constant value
+        // Error reassigning constVariable: Assignment to constant variable.
+
+        // New Assign Values attempt:
+        // New var Value: New Var Value
+        // New let Value: New let value
+        // New Const Value: First Constant value
+
+
+
+        // Q-2
+        function greet(name, greeting = "Hello") {
+            console.log(`${greeting}, ${name}!`);
+        }
+        greet("Smith", "Hi");
+        greet("Shahin");
+
+        // Q-3
+        function introduce(firstName, lastName, age) {
+            return `My name is ${firstName} ${lastName} and I am ${age} years old.`;
+        }
+        console.log(introduce("John", "Doe", 25));
+
+        // Q-4
+        const add = (a, b) => a + b;
+        console.log(add(3, 5));
+
+        // Q-5
+        function findMax(...args) {
+            return Math.max(...args);
+        }
+        console.log(findMax(1, 90, 95, 11));
+        console.log(findMax(60, 90, 13));
+        console.log(findMax(12, 94, 7, 84, 99));
+        console.log(findMax(-5, -10, -1));
+        console.log(findMax(6));
+
+        // Q-6
+        function mergeArrays(array1, array2) {
+            return [...array1, ...array2];
+        }
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, 5, 6];
+
+        const mergedArray = mergeArrays(arr1, arr2);
+
+        console.log(mergedArray);
+        console.log(arr1);
+        console.log(arr2);
+
+        // Q-7
+        function getNameAndCountry(person) {
+            const { name, country } = person;
+            return [name, country];
+        }
+        const person = {
+            name: "Miraz",
+            age: 24,
+            country: "BANGLADESH"
+        };
+
+        console.log(getNameAndCountry(person));
+
+        // Q-8
+        function getFirstThreeElements(arr) {
+            const [abc, def, ghi] = arr;
+            return { abc, def, ghi };
+        }
+
+        const numbers1 = [10, 20, 30, 40, 50];
+        console.log(getFirstThreeElements(numbers1));
+
+        // Q-9
+        function formatBookInfo(book) {
+            const { title, author } = book;
+            return `Title: ${title}, Author: ${author}`;
+        }
+        const book = {
+            title: "Sell Like Crazy",
+            author: "Sabri Suby",
+            year: 2019,
+            publisher: "King Kong"
+        };
+
+        console.log(formatBookInfo(book));
+
+        // Q-10
+        function addNumberToArray(originalArray, newNumber) {
+            const copiedArray = [...originalArray];
+            copiedArray.push(newNumber);
+            return copiedArray;
+        }
+
+
+        const numbers = [4, 5, 6, 7];
+
+        const newArray = addNumberToArray(numbers, 9);
+
+        console.log(newArray);
+        console.log(numbers);
+
+
+
+    </script>
+
+</body>
+
+</html>
